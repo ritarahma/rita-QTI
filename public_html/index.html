@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>QTI-test</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootsrap/3.3/5/js/bootstrap.min.js"></script>
+        
+        <link rel="stylesheet" href="style.css"/>
+        <script type="text/javascript" src="function2.js"></script>
+        <script>
+            function cariun() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("unsearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tblList");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[0];
+              if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+          function caripwd() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("pwdsearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tblList");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[1];
+              if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+          function carifn() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("fnsearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tblList");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[2];
+              if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+          function caricity() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("citysearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tblList");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[3];
+              if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+          function caristat() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("statsearch");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("tblList");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[4];
+              if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+          </script>
+                
+    </head>
+    <body>
+        <div class="page-header">
+            <h1>CRUD Javascript</h1>
+        </div>
+        <div class="container">
+            <form id="frmuser">
+            <table id="userview" class="table table-bordered">
+                <tr>
+                    <td><label for="un">Username</label></td>
+                    <td></td>
+                    <td><input type="text" id="un" class="form-control" placeholder="Username"></td>
+                </tr>
+                <tr>
+                    <td> <label for="pwd" class="col-lg-2 control-label">Password</label></td>
+                    <td></td>
+                    <td><input type="text" id="pwd" class="form-control" placeholder="Password"></td>
+                </tr>
+                <tr>
+                    <td> <label for="fn" class="col-lg-2 control-label">FullName</label></td>
+                    <td></td>
+                    <td><input type="text" id="fn" class="form-control" placeholder="FullName"></td>
+                </tr>
+                <tr>
+                    <td><label for="city" class="col-lg-2 control-label">City</label></td>
+                    <td></td>
+                    <td><input type="text" id="city" class="form-control" placeholder="City"></td>
+                </tr>
+                <tr>
+                    <td><label for="stat" class="col-lg-2 control-label">Status</label></td>
+                    <td></td>
+                    <td><input type="text" id="stat" class="form-control" placeholder="Status"></td>
+                </tr>
+            </table>
+            
+            <input type="submit" value="Insertar" id="btnSave" class="btn btn-success"/>
+            </form>
+        </div>
+         <input type="text" id="unsearch" onkeyup="cariun()" placeholder="cari username" />
+         <input type="text" id="pwdsearch" onkeyup="caripwd()" placeholder="cari password" />
+         <input type="text" id="fnsearch" onkeyup="carifn()" placeholder="cari fullname" />
+         <input type="text" id="citysearch" onkeyup="caricity()" placeholder="cari kota" />
+         <input type="text" id="statsearch" onkeyup="caristat()" placeholder="cari status" />
+        <div class="container">
+            <table id="tblList" class="table table-bordered">
+            </table>
+        </div>
+        
+        <div id="footer">
+            <p>Rita Rahmawati</p>
+        </div>
+    </body>
+</html>
